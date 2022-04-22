@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   HStack,
   VStack,
@@ -15,7 +15,6 @@ interface ProjectCardProps {
   title: string;
   description: string;
   logo: string;
-  blurHash: string;
   link: string;
   technologies: string[];
 }
@@ -24,9 +23,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   logo,
-  blurHash,
   link,
-  technologies
+  technologies,
 }) => {
   const textColor = useColorModeValue("gray.500", "gray.200");
   const [isOpen, setIsOpen] = React.useState(false);
@@ -50,7 +48,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       >
         <LazyImage
           src={logo}
-          blurHash={blurHash}
           size="sm"
           width={33}
           height={33}
@@ -63,17 +60,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               <HStack>
                 <Text
                   as={Link}
-                  href={link}
+                  {...(link && { href: link })}
                   fontWeight="bold"
                   fontSize="md"
                   noOfLines={1}
-                  onClick={e => e.stopPropagation()}
+                  onClick={(e) => e.stopPropagation()}
                   isExternal
                 >
                   {title}
                 </Text>
                 <HStack spacing="1">
-                  {technologies.map(tech => (
+                  {technologies.map((tech) => (
                     <Tag size="sm" colorScheme={getTagColor(tech)}>
                       {tech}
                     </Tag>

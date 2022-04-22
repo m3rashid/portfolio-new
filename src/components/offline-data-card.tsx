@@ -1,7 +1,6 @@
 import * as React from "react";
 import {
   Box,
-  Image,
   useColorModeValue,
   VStack,
   Text,
@@ -9,33 +8,24 @@ import {
   HStack,
   Tag,
   Icon,
-  useDisclosure,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalBody,
-  Center,
   Flex,
   Tooltip,
 } from "@chakra-ui/react";
+import { FiGithub } from "react-icons/fi";
+import { AiOutlineStar } from "react-icons/ai";
+
 import { MotionBox } from "./motion";
 import { getTagColor } from "style/theme";
-import {
-  AiOutlineStar,
-  //  AiOutlineShareAlt
-} from "react-icons/ai";
-import { FiGithub } from "react-icons/fi";
 import { CardTransition } from "./page-transitions";
-import LazyImage from "./lazy-image";
+
 interface RepositoryCardProps {
   key: number;
-  title: string;
-  description: string;
-  cover: string;
-  blurHash: string;
+  title?: string;
+  description?: string;
+  cover?: string;
   technologies: string[];
   url: string;
-  live: string;
+  live?: string;
   stars: string;
   fork: string;
   created?: string;
@@ -45,19 +35,12 @@ const RepositoryCard = (props: RepositoryCardProps) => {
     // key,
     title,
     // description,
-    cover,
-    blurHash,
     technologies,
     url,
     // live,
     stars,
     // fork,
   } = props;
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const handleClick = () => {
-    onOpen();
-  };
 
   const handleLinkClick = (
     e: React.MouseEvent<HTMLParagraphElement, MouseEvent>,
@@ -88,7 +71,6 @@ const RepositoryCard = (props: RepositoryCardProps) => {
       {/* @ts-ignore */}
       <Box onClick={handleClick} cursor="pointer" size="xl">
         <VStack
-          //   w="100%"
           rounded="xl"
           borderWidth="1px"
           bg={useColorModeValue("white", "gray.800")}
@@ -114,14 +96,7 @@ const RepositoryCard = (props: RepositoryCardProps) => {
                   w="100%"
                   borderBottomWidth="1px"
                   borderColor={useColorModeValue("gray.100", "gray.700")}
-                >
-                  {/* <Image
-                    src={cover}
-                    fallback={<Skeleton />}
-                    objectFit="cover"
-                  /> */}
-                  <LazyImage src={cover} blurHash={blurHash} />
-                </AspectRatio>
+                ></AspectRatio>
               </MotionBox>
             </MotionBox>
           </Box>
@@ -131,7 +106,6 @@ const RepositoryCard = (props: RepositoryCardProps) => {
               <Tooltip hasArrow label="Github link" placement="top">
                 <HStack>
                   <Icon as={FiGithub} boxSize="0.9em" mt={"1px"} />
-                  {/* <Link href={url} isExternal> */}
                   <Text
                     fontSize="sm"
                     noOfLines={1}
@@ -143,7 +117,6 @@ const RepositoryCard = (props: RepositoryCardProps) => {
                   </Text>
                 </HStack>
               </Tooltip>
-              {/* </Link> */}
               <Flex>
                 <Icon as={AiOutlineStar} boxSize="0.9em" mt={"1px"} />
                 <Box as="span" ml="1" fontSize="sm">
@@ -164,40 +137,8 @@ const RepositoryCard = (props: RepositoryCardProps) => {
                 </HStack>
               </Box>
             </Flex>
-            {/* <Flex justifyContent={"space-between"} width="100%">
-              <Flex>
-                <AiOutlineStar color="teal.300" />
-                <Box as="span" ml="1" fontSize="sm">
-                  {stars}
-                </Box>
-              </Flex>
-              <Box >
-              <Text
-                fontSize="xs"
-                fontWeight="400"
-                color={useColorModeValue("gray.400", "gray.500")}
-              >
-                {created}
-              </Text>
-            </Box>
-            </Flex> */}
           </VStack>
         </VStack>
-        <Modal isOpen={isOpen} onClose={onClose} isCentered allowPinchZoom>
-          <ModalOverlay />
-          <ModalContent bg="none" maxW={"28rem"} w="auto">
-            <ModalBody p={0} rounded="lg" overflow="hidden" bg="none">
-              <Center>
-                <Image src={cover} rounded="lg" />
-                {/* {type == "image" ? (
-                <Image src={cover} rounded="lg" />
-              ) : (
-                <ReactPlayer url={link} controls playing />
-              )} */}
-              </Center>
-            </ModalBody>
-          </ModalContent>
-        </Modal>
       </Box>
     </CardTransition>
   );

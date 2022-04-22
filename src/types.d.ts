@@ -2,8 +2,7 @@ type project = {
   id: number;
   title: string;
   logo: string;
-  blurHash?: string;
-  link: string;
+  link?: string;
   desc: string;
   technologies: string[];
 };

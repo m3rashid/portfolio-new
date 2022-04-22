@@ -3,7 +3,6 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import { Center, Spinner } from "@chakra-ui/react";
 
 const About = React.lazy(() => import("./about"));
-const RepositoriesList = React.lazy(() => import("./repositories-list"));
 const Home = React.lazy(() => import("./home"));
 const TechStack = React.lazy(() => import("./tech-stack"));
 const Achievements = React.lazy(() => import("./achievements"));
@@ -13,7 +12,6 @@ const routes = [
   { path: "/", name: "Home", component: Home },
   { path: "/about", name: "About", component: About },
   { path: "/achievements", name: "Achievements", component: Achievements },
-  { path: "/repos", name: "OpenSource", component: RepositoriesList },
   { path: "/tech-stack", name: "Tools", component: TechStack },
   { path: "/story-timeline", name: "My Story", component: MyStory },
 ];

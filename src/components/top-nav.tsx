@@ -26,13 +26,11 @@ import { AiTwotoneThunderbolt } from "react-icons/ai";
 import { BiChevronDown } from "react-icons/bi";
 import { BsCheckCircle } from "react-icons/bs";
 import { MdTimeline } from "react-icons/md";
-import { BsBook } from "react-icons/bs";
 
 const webLinks = [{ name: "About", path: "/about" }];
 
 const mobileLinks = [
   { name: "About", path: "/about" },
-  { name: "My Repos", path: "/repos" },
   { name: "Tech Stack", path: "/tech-stack" },
   { name: "Developer Story", path: "/story-timeline" },
 ];
@@ -145,18 +143,6 @@ export default function TopNav() {
                       </HStack>
                     </MenuItem>
                   </Link>
-                  <Link as={RouterNavLink} to="/repos">
-                    <MenuItem>
-                      <HStack>
-                        <Icon
-                          as={BsBook}
-                          size={18}
-                          color={useColorModeValue("blue.500", "blue.200")}
-                        />
-                        <Text>My Repos</Text>
-                      </HStack>
-                    </MenuItem>
-                  </Link>
                   <Link as={RouterNavLink} to="/achievements">
                     <MenuItem>
                       <HStack>
@@ -185,13 +171,13 @@ export default function TopNav() {
               </Menu>
             </HStack>
           </HStack>
-          <Flex alignItems={"center"}>
+          <Flex alignItems="center">
             <IconButton
               as={Link}
-              href={"https://github.com/m3rashid"}
-              size={"md"}
+              href="https://github.com/m3rashid"
+              size="md"
               icon={<FaGithub />}
-              aria-label={"Github account"}
+              aria-label="Github account"
               bg={useColorModeValue("white", "gray.700")}
               _hover={{
                 textDecoration: "none",

@@ -1,8 +1,9 @@
-import * as React from "react";
+import React from "react";
+import { AnimateSharedLayout } from "framer-motion";
 import { VStack, SimpleGrid } from "@chakra-ui/react";
+
 import ProjectCard from "./project-card";
 import Header from "./header";
-import { AnimateSharedLayout } from "framer-motion";
 import { MotionBox } from "./motion";
 
 interface ProjectsProps {
@@ -26,9 +27,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                 key={project.id}
                 title={project.title}
                 description={project.desc}
-                blurHash={project.blurHash}
                 logo={project.logo}
-                link={project.link}
+                link={project.link || ""}
                 technologies={project.technologies}
               />
             </MotionBox>

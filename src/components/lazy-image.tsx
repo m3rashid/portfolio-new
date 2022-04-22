@@ -4,7 +4,6 @@ import { Image } from "@chakra-ui/react";
 
 type LazyImageProps = {
   src: string;
-  blurHash: string;
   size?: string;
   width?: number;
   height?: number;
