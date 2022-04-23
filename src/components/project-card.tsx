@@ -69,13 +69,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 >
                   {title}
                 </Text>
-                <HStack spacing="1">
-                  {technologies.map((tech) => (
-                    <Tag size="sm" colorScheme={getTagColor(tech)}>
-                      {tech}
-                    </Tag>
-                  ))}
-                </HStack>
               </HStack>
             </motion.div>
             <AnimatePresence>
@@ -102,16 +95,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 variants={{ exit: { transition: { staggerChildren: 0.1 } } }}
               >
                 {isOpen && (
-                  <Text
-                    fontSize="sm"
-                    color={textColor}
-                    // noOfLines={{ base: isOpen ? 5 : 2 }}
-                  >
+                  <Text fontSize="sm" color={textColor}>
                     {description}
                   </Text>
                 )}
               </motion.div>
             </AnimatePresence>
+            <HStack spacing="1">
+              {technologies.map((tech, index) => (
+                <Tag key={index} size="sm" colorScheme={getTagColor(tech)}>
+                  {tech}
+                </Tag>
+              ))}
+            </HStack>
           </VStack>
         </VStack>
       </HStack>

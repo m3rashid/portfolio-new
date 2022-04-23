@@ -5,7 +5,7 @@ export const projectsList = [
     logo: "/images/projects/jmiconnect.png",
     link: "https://jmi-connect.netlify.app/",
     desc: "Social Media App for JMI Students",
-    technologies: ["React", "Node", "Express", "MySQL"],
+    technologies: ["React", "Node", "MySQL"],
   },
   {
     id: 1,
@@ -13,7 +13,7 @@ export const projectsList = [
     logo: "/images/projects/cubicle.jpg",
     link: "https://cubicle.vercel.app/",
     desc: "My blog website",
-    technologies: ["typescript", "react", "nextjs", "tailwindcss"],
+    technologies: ["typescript", "nextjs", "tailwindcss"],
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const projectsList = [
     logo: "/images/projects/taxtds.jpeg",
     link: "https://taxtds.herokuapp.com/",
     desc: "Local business directory website for all your finance and tax needs",
-    technologies: ["typescript", "ejs", "nodejs", "express", "mongodb"],
+    technologies: ["javascript", "ejs", "nodejs", "mongodb"],
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const projectsList = [
     logo: "/images/projects/social.png",
     link: "https://github.com/m3rashid/social",
     desc: "Social media website",
-    technologies: ["typescript", "react", "nodejs", "express", "mongodb"],
+    technologies: ["typescript", "react", "nodejs", "mongodb"],
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ export const projectsList = [
     logo: "/images/projects/whatsapp.jpeg",
     link: "https://github.com/m3rashid/whatsapp-bot",
     desc: "Whatsapp Bot",
-    technologies: ["typescript", "nodejs", "express", "mongodb"],
+    technologies: ["typescript", "nodejs", "mongodb"],
   },
   {
     id: 6,
