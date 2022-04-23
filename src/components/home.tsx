@@ -4,7 +4,6 @@ import {
   Avatar,
   Box,
   Text,
-  Badge,
   Stack,
   Link,
   UnorderedList,
@@ -114,16 +113,13 @@ const Home = () => {
             </Text>
             <UnorderedList textAlign="left" paddingLeft={5} m={0}>
               <ListItem>
-                <Link as={NavLink} to="/repos">
-                  Live/Local Github Repos
-                  <Badge ml="1" colorScheme="green">
-                    New
-                  </Badge>
+                <Link as={NavLink} to="/about">
+                  About
                 </Link>
               </ListItem>
               <ListItem>
                 <Link as={NavLink} to="/story-timeline">
-                  Story page
+                  My Story
                 </Link>
               </ListItem>
               <ListItem>

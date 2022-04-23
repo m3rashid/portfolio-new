@@ -1,4 +1,5 @@
 import * as React from "react";
+import { in2020, in2021, in2022 } from "../data/achievements";
 // import { Link as NavLink } from "react-router-dom";
 import {
   VStack,
@@ -10,6 +11,7 @@ import {
 // import { TimelineItem } from "./Timeline";
 import { PageSlideFade } from "./page-transitions";
 import Header from "./header";
+import { TimelineItem } from "./Timeline";
 
 // interface ExternalLinkProps extends LinkProps {
 //   url: string;
@@ -53,21 +55,49 @@ const Achievements = () => {
       <VStack textAlign="start" align="start" mb={5}>
         <Box>
           <Heading fontSize="2xl" fontWeight="600" my={5}>
+            2022
+          </Heading>
+          {in2022.map((item, index) => {
+            return (
+              <Box key={"2022" + index}>
+                <TimelineItem icon={item.icon || undefined}>
+                  {item.text}
+                </TimelineItem>
+              </Box>
+            );
+          })}
+        </Box>
+        <Box>
+          <Heading fontSize="2xl" fontWeight="600" my={5}>
             2021
           </Heading>
           <Box>
-            {/* <TimelineItem icon={FiPackage}>
-              Published my first post on this website{" "}
-              <InternalLink color={"blue.200"} url="/blog" text={"Blog"} />
-            </TimelineItem> */}
+            {in2021.map((item, index) => {
+              return (
+                <Box key={"2021" + index}>
+                  <TimelineItem icon={item.icon || undefined}>
+                    {item.text}
+                  </TimelineItem>
+                </Box>
+              );
+            })}
           </Box>
         </Box>
+
         <Box>
           <Heading fontSize="2xl" fontWeight="600" my={5}>
             2020
           </Heading>
           <Box>
-            {/* <TimelineItem icon={FiEdit2}>Wrote 5 blog posts</TimelineItem> */}
+            {in2020.map((item, index) => {
+              return (
+                <Box key={"2021" + index}>
+                  <TimelineItem icon={item.icon || undefined}>
+                    {item.text}
+                  </TimelineItem>
+                </Box>
+              );
+            })}
           </Box>
         </Box>
       </VStack>
