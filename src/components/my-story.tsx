@@ -9,12 +9,13 @@ import {
   Divider,
   IconButton,
 } from "@chakra-ui/react";
-import { StoryTimeline } from "./story-timeline";
 import { FaGraduationCap, FaAward, FaMedal } from "react-icons/fa";
 import { BsFillBriefcaseFill } from "react-icons/bs";
-import { companies, institutes } from "data/data";
+
 import Header from "./header";
 import Section from "./section";
+import { StoryTimeline } from "./story-timeline";
+import { companies, institutes } from "data/data";
 import { PageSlideFade } from "./page-transitions";
 
 const MyStory = () => {
@@ -26,14 +27,6 @@ const MyStory = () => {
             <Header mt={0} mb={1}>
               My Story
             </Header>
-            {/* <Text
-              fontSize={"xl"}
-              color={useColorModeValue("gray.500", "gray.200")}
-              maxW="lg"
-              textAlign="center"
-            >
-              This page tells you my story in timeline shape.
-            </Text> */}
           </VStack>
         </PageSlideFade>
       </Section>
@@ -42,7 +35,6 @@ const MyStory = () => {
           <StoryTimeline year={"2021"} index={0} />
           {companies.map((company, index) => (
             <StoryTimeline icon={BsFillBriefcaseFill} index={index}>
-              {" "}
               <HStack>
                 <Image
                   rounded="full"
@@ -75,7 +67,6 @@ const MyStory = () => {
                 icon={FaGraduationCap}
                 index={index > 0 ? index + 1 : index}
               >
-                {" "}
                 <HStack>
                   <Image
                     rounded="full"
@@ -103,7 +94,6 @@ const MyStory = () => {
               {institute.awards &&
                 institute.awards.map((award, index1) => (
                   <StoryTimeline icon={FaAward} index={index1 + index + 1}>
-                    {" "}
                     <HStack>
                       <IconButton
                         colorScheme="blue"

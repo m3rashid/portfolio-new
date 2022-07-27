@@ -9,11 +9,31 @@ const Achievements = React.lazy(() => import("./achievements"));
 const MyStory = React.lazy(() => import("./my-story"));
 
 const routes = [
-  { path: "/", name: "Home", component: Home },
-  { path: "/about", name: "About", component: About },
-  { path: "/achievements", name: "Achievements", component: Achievements },
-  { path: "/tech-stack", name: "Tools", component: TechStack },
-  { path: "/story-timeline", name: "My Story", component: MyStory },
+  {
+    path: "/",
+    name: "Home",
+    component: Home,
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: About,
+  },
+  {
+    path: "/achievements",
+    name: "Achievements",
+    component: Achievements,
+  },
+  {
+    path: "/tech-stack",
+    name: "Tools",
+    component: TechStack,
+  },
+  {
+    path: "/story-timeline",
+    name: "My Story",
+    component: MyStory,
+  },
 ];
 
 const Navigation = () => {

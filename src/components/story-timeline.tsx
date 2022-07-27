@@ -45,9 +45,8 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({
           onClose={close}
           placement={place as any}
           closeOnBlur={false}
-          // variant="responsive"
-          // @ts-ignore
-          width={["9.3rem", "13rem", "15rem", "100%"]}
+          variant="responsive"
+          // width={["9.3rem", "13rem", "15rem", "100%"]}
         >
           {/* @ts-ignore */}
           <PopoverTrigger>
