@@ -4,7 +4,7 @@ export const companies = [
     alt: "m16 labs",
     role: "Softare Engineering Intern",
     skills: ["mongodb", "expressjs", "reactjs", "nodejs"],
-    period: "31 Jan 2022 - Present",
+    period: "31 Jan 2022 - May 2022",
     logo: "/images/work/m16.jpeg",
   },
   {
