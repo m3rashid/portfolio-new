@@ -1,3 +1,8 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
 .face {
   animation: 2s ease-in-out infinite alternate shake;
 }

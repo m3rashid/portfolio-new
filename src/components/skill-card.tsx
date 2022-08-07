@@ -11,8 +11,8 @@ import {
 } from "@chakra-ui/react";
 import { usePalette } from "react-palette";
 
-import { MotionBox } from "components/motion";
-import { item } from "components/page-transitions";
+import { MotionBox } from "components/atoms/motion";
+import { item } from "components/atoms/page-transitions";
 
 const SkillCard = ({ name, image, link, description }) => {
   const { data, loading } = usePalette(image);

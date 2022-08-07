@@ -10,6 +10,7 @@ import {
   PopoverArrow,
   PopoverContent,
   PopoverBody,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import { FiCheckCircle } from "react-icons/fi";
 
@@ -34,7 +35,8 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({
   const open = () => setIsOpen(!isOpen);
   const close = () => setIsOpen(false);
   const color = useColorModeValue("gray.700", "gray.200");
-  let place = index % 2 === 0 ? "right" : "left";
+  const [isSmallerThan800] = useMediaQuery("(max-width: 800px)");
+  let place = isSmallerThan800 ? "right" : index % 2 === 0 ? "right" : "left";
 
   return (
     <Flex minH={20} {...props}>
@@ -83,9 +85,7 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({
             {!year && (
               <PopoverContent padding={["0.2rem", "0.2rem", "0.7rem"]}>
                 <PopoverArrow />
-                <PopoverBody>
-                  <Box overflow="auto">{children}</Box>
-                </PopoverBody>
+                <PopoverBody>{children}</PopoverBody>
               </PopoverContent>
             )}
           </Box>

@@ -10,7 +10,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 
 import { getTagColor } from "style/theme";
-import LazyImage from "components/lazy-image";
+import LazyImage from "components/atoms/lazy-image";
 
 interface ProjectCardProps {
   title: string;

@@ -17,8 +17,8 @@ import {
   PageSlideFade,
   StaggerChildren,
   CardTransition,
-} from "components/page-transitions";
-import { MotionBox } from "components/motion";
+} from "components/atoms/page-transitions";
+import { MotionBox } from "components/atoms/motion";
 import { companies, institutes } from "data/data";
 import Header from "components/globals/header";
 

@@ -2,7 +2,7 @@ import React from "react";
 import { in2020, in2021, in2022 } from "../data/achievements";
 import { VStack, Heading, Box } from "@chakra-ui/react";
 
-import { PageSlideFade } from "components/page-transitions";
+import { PageSlideFade } from "components/atoms/page-transitions";
 import Header from "components/globals/header";
 import { TimelineItem } from "components/Timeline";
 

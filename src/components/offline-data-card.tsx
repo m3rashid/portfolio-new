@@ -14,9 +14,9 @@ import {
 import { FiGithub } from "react-icons/fi";
 import { AiOutlineStar } from "react-icons/ai";
 
-import { MotionBox } from "components/motion";
+import { MotionBox } from "components/atoms/motion";
 import { getTagColor } from "style/theme";
-import { CardTransition } from "components/page-transitions";
+import { CardTransition } from "components/atoms/page-transitions";
 
 interface RepositoryCardProps {
   key: number;

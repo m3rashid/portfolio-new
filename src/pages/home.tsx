@@ -11,7 +11,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { Link as NavLink } from "react-router-dom";
-import { MotionBox, MotionFlex } from "components/motion";
+import { MotionBox, MotionFlex } from "components/atoms/motion";
 import Header from "components/globals/header";
 import Projects from "components/projects";
 import { projectsList } from "data/projects-list";

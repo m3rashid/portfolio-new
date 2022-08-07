@@ -14,7 +14,7 @@ import { FiGithub } from "react-icons/fi";
 import { BiGitRepoForked, BiStar } from "react-icons/bi";
 
 import { getTagColor } from "style/theme";
-import { MotionBox } from "components/motion";
+import { MotionBox } from "components/atoms/motion";
 
 interface RepositoryCardProps {
   title: string;

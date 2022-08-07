@@ -30,8 +30,9 @@ export const App = () => (
         w={["90%", "85%", "80%"]}
         maxW={800}
         mx="auto"
+        style={{ overflowX: "hidden" }}
       >
-        <Box pt={10} pb={10}>
+        <Box pt={10} pb={10} style={{ overflowX: "hidden" }}>
           <React.Suspense
             fallback={
               <Center>

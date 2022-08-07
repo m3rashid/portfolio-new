@@ -18,11 +18,11 @@ import { AiTwotoneThunderbolt, AiFillTool } from "react-icons/ai";
 
 import { skills } from "data/data";
 import Header from "components/globals/header";
-import Section from "components/section";
+import Section from "components/atoms/section";
 import SkillCard from "components/skill-card";
-import { MotionBox } from "components/motion";
-import { container } from "components/page-transitions";
-import { PageSlideFade } from "components/page-transitions";
+import { MotionBox } from "components/atoms/motion";
+import { container } from "components/atoms/page-transitions";
+import { PageSlideFade } from "components/atoms/page-transitions";
 
 const filterCriteria = [
   { value: "language", label: "Language", iconAs: AiTwotoneThunderbolt },
