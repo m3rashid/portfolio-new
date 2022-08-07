@@ -38,7 +38,7 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({
 
   return (
     <Flex minH={20} {...props}>
-      <Flex flexDir="column" alignItems={"center"} minHeight={"8rem"} mr={4}>
+      <Flex flexDir="column" alignItems="center" minHeight="8rem" mr={4}>
         <Popover
           returnFocusOnClose={false}
           isOpen={isOpen}
@@ -46,7 +46,6 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({
           placement={place as any}
           closeOnBlur={false}
           variant="responsive"
-          // width={["9.3rem", "13rem", "15rem", "100%"]}
         >
           {/* @ts-ignore */}
           <PopoverTrigger>
@@ -60,7 +59,7 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({
               {year ? (
                 <Box
                   fontSize={15}
-                  fontWeight={"bold"}
+                  fontWeight="bold"
                   color={color}
                   pos="absolute"
                   left="0.5rem"
@@ -84,7 +83,6 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({
             {!year && (
               <PopoverContent padding={["0.2rem", "0.2rem", "0.7rem"]}>
                 <PopoverArrow />
-                {/* <PopoverCloseButton /> */}
                 <PopoverBody>
                   <Box overflow="auto">{children}</Box>
                 </PopoverBody>

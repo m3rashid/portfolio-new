@@ -4,7 +4,7 @@ import {
   BoxProps,
   Circle,
   Flex,
-  useColorModeValue
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { FiCheckCircle } from "react-icons/fi";
 

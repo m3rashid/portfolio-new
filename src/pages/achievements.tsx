@@ -1,47 +1,10 @@
-import * as React from "react";
+import React from "react";
 import { in2020, in2021, in2022 } from "../data/achievements";
-// import { Link as NavLink } from "react-router-dom";
-import {
-  VStack,
-  Heading,
-  Box,
-  // Link, LinkProps
-} from "@chakra-ui/react";
+import { VStack, Heading, Box } from "@chakra-ui/react";
 
-// import { TimelineItem } from "./Timeline";
-import { PageSlideFade } from "./page-transitions";
-import Header from "./header";
-import { TimelineItem } from "./Timeline";
-
-// interface ExternalLinkProps extends LinkProps {
-//   url: string;
-//   linkProps?: LinkProps;
-//   text: string;
-// }
-
-// const ExternalLink: React.FC<ExternalLinkProps> = ({
-//   url,
-//   linkProps,
-//   text,
-// }) => {
-//   return (
-//     <Link href={url} {...linkProps} {...props}>
-//       {text}
-//     </Link>
-//   );
-// };
-
-// const InternalLink: React.FC<ExternalLinkProps> = ({
-//   url,
-//   linkProps,
-//   text,
-// }) => {
-//   return (
-//     <Link as={NavLink} to={url} {...linkProps} {...props}>
-//       {text}
-//     </Link>
-//   );
-// };
+import { PageSlideFade } from "components/page-transitions";
+import Header from "components/globals/header";
+import { TimelineItem } from "components/Timeline";
 
 const Achievements = () => {
   return (

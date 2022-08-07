@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   Flex,
   Avatar,
@@ -11,9 +11,9 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { Link as NavLink } from "react-router-dom";
-import { MotionBox, MotionFlex } from "./motion";
-import Header from "./header";
-import Projects from "./projects";
+import { MotionBox, MotionFlex } from "components/motion";
+import Header from "components/globals/header";
+import Projects from "components/projects";
 import { projectsList } from "data/projects-list";
 import "style/style.css";
 
@@ -41,7 +41,7 @@ const Home = () => {
           mb={[16, 16, "auto"]}
         >
           <Avatar
-            size={"2xl"}
+            size="2xl"
             src="/images/rashid.png"
             backgroundColor={useColorModeValue("teal.100", "teal.200")}
           />
@@ -101,8 +101,8 @@ const Home = () => {
             padding={4}
             align="start"
             borderLeft="4px solid"
-            borderColor={"#53c8c4"}
-            color={"whatsapp"}
+            borderColor="#53c8c4"
+            color="whatsapp"
             _hover={{ shadow: "lg" }}
             backgroundColor={useColorModeValue("gray.100", "#1e2533")}
             rounded="sm"

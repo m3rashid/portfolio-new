@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   Box,
   useColorModeValue,
@@ -14,9 +14,9 @@ import {
 import { FiGithub } from "react-icons/fi";
 import { AiOutlineStar } from "react-icons/ai";
 
-import { MotionBox } from "./motion";
+import { MotionBox } from "components/motion";
 import { getTagColor } from "style/theme";
-import { CardTransition } from "./page-transitions";
+import { CardTransition } from "components/page-transitions";
 
 interface RepositoryCardProps {
   key: number;
@@ -102,10 +102,10 @@ const RepositoryCard = (props: RepositoryCardProps) => {
           </Box>
 
           <VStack py={2} px={[2, 4]} spacing={1} align="start" w="100%">
-            <Flex justifyContent={"space-between"} width="100%">
+            <Flex justifyContent="space-between" width="100%">
               <Tooltip hasArrow label="Github link" placement="top">
                 <HStack>
-                  <Icon as={FiGithub} boxSize="0.9em" mt={"1px"} />
+                  <Icon as={FiGithub} boxSize="0.9em" mt="1px" />
                   <Text
                     fontSize="sm"
                     noOfLines={1}
@@ -118,13 +118,13 @@ const RepositoryCard = (props: RepositoryCardProps) => {
                 </HStack>
               </Tooltip>
               <Flex>
-                <Icon as={AiOutlineStar} boxSize="0.9em" mt={"1px"} />
+                <Icon as={AiOutlineStar} boxSize="0.9em" mt="1px" />
                 <Box as="span" ml="1" fontSize="sm">
                   {stars}
                 </Box>
               </Flex>
             </Flex>
-            <Flex justifyContent={"space-between"} width="100%">
+            <Flex justifyContent="space-between" width="100%">
               <Box>
                 <HStack spacing="1">
                   {technologies.map((tech) => (

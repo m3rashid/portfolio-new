@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   Icon,
   VStack,
@@ -14,16 +13,16 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import { BiDesktop } from "react-icons/bi";
+import { GiDatabase } from "react-icons/gi";
 import { AiTwotoneThunderbolt, AiFillTool } from "react-icons/ai";
 
-import { PageSlideFade } from "./page-transitions";
-import Section from "./section";
-import { GiDatabase } from "react-icons/gi";
-import SkillCard from "./skill-card";
 import { skills } from "data/data";
-import Header from "./header";
-import { MotionBox } from "./motion";
-import { container } from "./page-transitions";
+import Header from "components/globals/header";
+import Section from "components/section";
+import SkillCard from "components/skill-card";
+import { MotionBox } from "components/motion";
+import { container } from "components/page-transitions";
+import { PageSlideFade } from "components/page-transitions";
 
 const filterCriteria = [
   { value: "language", label: "Language", iconAs: AiTwotoneThunderbolt },
@@ -56,7 +55,7 @@ const TechStack = () => {
               Tech Stack
             </Header>
             <Text
-              fontSize={"xl"}
+              fontSize="xl"
               color={useColorModeValue("gray.500", "gray.200")}
               maxW="lg"
               textAlign="center"
@@ -95,7 +94,7 @@ const TechStack = () => {
                 </Tab>
               ))}
             </TabList>
-            <TabPanels minHeight={"45vh"}>
+            <TabPanels minHeight="45vh">
               <TabPanel px={0}>
                 <MotionBox
                   variants={container}
@@ -110,7 +109,7 @@ const TechStack = () => {
                         description={tool.description}
                         image={tool.image}
                         // @ts-ignore
-                        platform={"web"}
+                        platform="web"
                         link={tool.link}
                       />
                     ))}
@@ -131,7 +130,7 @@ const TechStack = () => {
                         description={tool.description}
                         image={tool.image}
                         // @ts-ignore
-                        platform={"web"}
+                        platform="web"
                         link={tool.link}
                       />
                     ))}
@@ -152,7 +151,7 @@ const TechStack = () => {
                         description={tool.description}
                         image={tool.image}
                         // @ts-ignore
-                        platform={"web"}
+                        platform="web"
                         link={tool.link}
                       />
                     ))}
@@ -173,7 +172,7 @@ const TechStack = () => {
                         description={tool.description}
                         image={tool.image}
                         // @ts-ignore
-                        platform={"web"}
+                        platform="web"
                         link={tool.link}
                       />
                     ))}

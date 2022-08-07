@@ -10,8 +10,9 @@ import {
   Skeleton,
 } from "@chakra-ui/react";
 import { usePalette } from "react-palette";
-import { MotionBox } from "./motion";
-import { item } from "./page-transitions";
+
+import { MotionBox } from "components/motion";
+import { item } from "components/page-transitions";
 
 const SkillCard = ({ name, image, link, description }) => {
   const { data, loading } = usePalette(image);

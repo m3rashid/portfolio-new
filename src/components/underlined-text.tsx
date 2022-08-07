@@ -13,8 +13,8 @@ const UnderlinedText = (props: React.PropsWithChildren<Props>) => (
       as="span"
       display="block"
       position="absolute"
-      bg={"gray.200"}
-      w={"100%"}
+      bg="gray.200"
+      w="100%"
       h={props.h || "1px"}
       bottom={-2}
     />

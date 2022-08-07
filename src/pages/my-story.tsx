@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   Text,
   VStack,
@@ -12,11 +12,11 @@ import {
 import { FaGraduationCap, FaAward, FaMedal } from "react-icons/fa";
 import { BsFillBriefcaseFill } from "react-icons/bs";
 
-import Header from "./header";
-import Section from "./section";
-import { StoryTimeline } from "./story-timeline";
+import Header from "components/globals/header";
+import Section from "components/section";
+import { StoryTimeline } from "components/story-timeline";
 import { companies, institutes } from "data/data";
-import { PageSlideFade } from "./page-transitions";
+import { PageSlideFade } from "components/page-transitions";
 
 const MyStory = () => {
   return (
@@ -32,7 +32,7 @@ const MyStory = () => {
       </Section>
       <VStack textAlign="start" align="flex-start" mb={0}>
         <Box>
-          <StoryTimeline year={"2021"} index={0} />
+          <StoryTimeline year="2021" index={0} />
           {companies.map((company, index) => (
             <StoryTimeline icon={BsFillBriefcaseFill} index={index}>
               <HStack>
@@ -60,7 +60,7 @@ const MyStory = () => {
               <Text fontSize={[12, 13, 15]}>{company.role}</Text>
             </StoryTimeline>
           ))}
-          <StoryTimeline year={"2017"} index={0} />
+          <StoryTimeline year="2017" index={0} />
           {institutes.map((institute, index) => (
             <>
               <StoryTimeline

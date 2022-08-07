@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   Box,
   Stack,
@@ -17,10 +17,10 @@ import {
   PageSlideFade,
   StaggerChildren,
   CardTransition,
-} from "./page-transitions";
-import { MotionBox } from "./motion";
+} from "components/page-transitions";
+import { MotionBox } from "components/motion";
 import { companies, institutes } from "data/data";
-import Header from "./header";
+import Header from "components/globals/header";
 
 interface CardProps {
   title: string;

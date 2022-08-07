@@ -41,7 +41,7 @@ const Footer = () => {
           fontSize="sm"
           color={useColorModeValue("gray.500", "gray.200")}
         >
-          © {new Date().getFullYear()} MD Rashid Hussain{" "}
+          © {new Date().getFullYear()} MD Rashid Hussain
         </Text>
         <Box textAlign="center">
           {siteConfig.author.accounts.map((sc, index) => (

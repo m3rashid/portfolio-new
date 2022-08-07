@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   Box,
   useColorModeValue,
@@ -10,10 +10,11 @@ import {
   Flex,
   Tooltip,
 } from "@chakra-ui/react";
-import { MotionBox } from "./motion";
-import { getTagColor } from "style/theme";
-import { BiGitRepoForked, BiStar } from "react-icons/bi";
 import { FiGithub } from "react-icons/fi";
+import { BiGitRepoForked, BiStar } from "react-icons/bi";
+
+import { getTagColor } from "style/theme";
+import { MotionBox } from "components/motion";
 
 interface RepositoryCardProps {
   title: string;
@@ -55,38 +56,35 @@ const RepositoryCard = (props: RepositoryCardProps) => {
         <VStack overflow="hidden" align="start" spacing={1}>
           <VStack spacing={1} align="start" w="100%">
             <Flex
-              justifyContent={"space-between"}
+              justifyContent="space-between"
               width="100%"
               onClick={(e) => handleLinkClick(e, url)}
             >
               <Tooltip hasArrow label="Github link" placement="top">
-                <HStack cursor={"pointer"}>
-                  <Icon as={FiGithub} boxSize="0.9em" mt={"1px"} />
+                <HStack cursor="pointer">
+                  <Icon as={FiGithub} boxSize="0.9em" mt="1px" />
                   <Text
                     fontSize="sm"
                     noOfLines={1}
                     fontWeight="600"
                     align="left"
-                    color={"blue.500"}
+                    color="blue.500"
                   >
                     {title}
                   </Text>
                 </HStack>
               </Tooltip>
-              <HStack
-                cursor={"pointer"}
-                onClick={(e) => handleLinkClick(e, url)}
-              >
+              <HStack cursor="pointer" onClick={(e) => handleLinkClick(e, url)}>
                 {forks_count && (
                   <Box _hover={{ color: "blue.500" }}>
-                    <Icon as={BiGitRepoForked} boxSize="0.9em" mt={"1px"} />
+                    <Icon as={BiGitRepoForked} boxSize="0.9em" mt="1px" />
                     <Box as="span" ml="1" fontSize="sm">
                       {forks_count}
                     </Box>
                   </Box>
                 )}
                 <Box _hover={{ color: "blue.500" }}>
-                  <Icon as={BiStar} boxSize="0.9em" mt={"1px"} />
+                  <Icon as={BiStar} boxSize="0.9em" mt="1px" />
                   <Box as="span" ml="1" fontSize="sm">
                     {stargazers_count}
                   </Box>
@@ -94,7 +92,7 @@ const RepositoryCard = (props: RepositoryCardProps) => {
               </HStack>
             </Flex>
             {language && (
-              <Flex justifyContent={"space-between"} width="100%">
+              <Flex justifyContent="space-between" width="100%">
                 <Box>
                   <HStack spacing="1">
                     <Tag size="sm" colorScheme={getTagColor(language)}>
@@ -111,7 +109,7 @@ const RepositoryCard = (props: RepositoryCardProps) => {
             <Text color="gray.500" fontSize="sm" noOfLines={2} textAlign="left">
               {description}
             </Text>
-          </Box>{" "}
+          </Box>
         </VStack>
       </Box>
     </MotionBox>
