@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Flex,
@@ -17,22 +16,28 @@ import {
   Stack,
   Icon,
 } from "@chakra-ui/react";
-import { NavLink as RouterNavLink } from "react-router-dom";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineClose } from "react-icons/ai";
+import React from "react";
 import { FaGithub } from "react-icons/fa";
-import { ColorModeSwitcher } from "components/globals/ColorModeSwitcher";
-import { AiTwotoneThunderbolt } from "react-icons/ai";
+import { MdTimeline } from "react-icons/md";
 import { BiChevronDown } from "react-icons/bi";
 import { BsCheckCircle } from "react-icons/bs";
-import { MdTimeline } from "react-icons/md";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { NavLink as RouterNavLink } from "react-router-dom";
+import { AiOutlineClose, AiTwotoneThunderbolt } from "react-icons/ai";
 
-const webLinks = [{ name: "About", path: "/about" }];
+import { ColorModeSwitcher } from "components/globals/ColorModeSwitcher";
+
+const webLinks = [
+  { name: "About", path: "/about", external: false },
+  { name: "Blogs", path: "https://blogs.m3rashid.in", external: true },
+];
 
 const mobileLinks = [
-  { name: "About", path: "/about" },
-  { name: "Tech Stack", path: "/tech-stack" },
-  { name: "Developer Story", path: "/story-timeline" },
+  { name: "About", path: "/about", external: false },
+  { name: "Tech Stack", path: "/tech-stack", external: false },
+  { name: "Achievement", path: "/achievements", external: false },
+  { name: "Developer Story", path: "/story-timeline", external: false },
+  { name: "Blogs", path: "https://blogs.m3rashid.in", external: true },
 ];
 
 interface NavLinkProps {
@@ -101,14 +106,33 @@ export default function TopNav() {
               />
             </Box>
             <HStack as="nav" spacing={4} display={{ base: "none", md: "flex" }}>
-              {webLinks.map((link, index) => (
-                <NavLink
-                  key={index}
-                  name={link.name}
-                  path={link.path}
-                  onClose={onClose}
-                />
-              ))}
+              {webLinks.map((link, index) => {
+                if (link.external) {
+                  return (
+                    <Box
+                      key={index}
+                      px={2}
+                      py={1}
+                      rounded="md"
+                      _hover={{ textDecoration: "none", bg: menuProps.bg }}
+                      _activeLink={{ color: menuProps.color }}
+                    >
+                      <Link as={Link} href={link.path}>
+                        {link.name}
+                      </Link>
+                    </Box>
+                  );
+                } else {
+                  return (
+                    <NavLink
+                      key={index}
+                      name={link.name}
+                      path={link.path}
+                      onClose={onClose}
+                    />
+                  );
+                }
+              })}
               <Menu isLazy>
                 <MenuButton
                   as={Button}
@@ -192,14 +216,33 @@ export default function TopNav() {
             display={["inherit", "inherit", "none"]}
           >
             <Stack as="nav" spacing={4}>
-              {mobileLinks.map((link, index) => (
-                <NavLink
-                  index={index.toString()}
-                  name={link.name}
-                  path={link.path}
-                  onClose={onClose}
-                />
-              ))}
+              {mobileLinks.map((link, index) => {
+                if (link.external) {
+                  return (
+                    <Box
+                      key={index}
+                      px={2}
+                      py={1}
+                      rounded="md"
+                      _hover={{ textDecoration: "none", bg: menuProps.bg }}
+                      _activeLink={{ color: menuProps.color }}
+                    >
+                      <Link as={Link} href={link.path}>
+                        {link.name}
+                      </Link>
+                    </Box>
+                  );
+                } else {
+                  return (
+                    <NavLink
+                      index={index.toString()}
+                      name={link.name}
+                      path={link.path}
+                      onClose={onClose}
+                    />
+                  );
+                }
+              })}
             </Stack>
           </Box>
         ) : null}
