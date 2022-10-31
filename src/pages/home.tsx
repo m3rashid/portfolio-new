@@ -42,7 +42,7 @@ const Home = () => {
         >
           <Avatar
             size="2xl"
-            src="/images/rashid.png"
+            src="/images/rashid.jpg"
             backgroundColor={useColorModeValue("teal.100", "teal.200")}
           />
         </MotionBox>

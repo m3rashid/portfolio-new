@@ -101,7 +101,7 @@ export default function TopNav() {
                 as={RouterNavLink}
                 size="sm"
                 to="/portfolio"
-                src="/images/rashid.png"
+                src="/images/rashid.jpg"
                 backgroundColor={useColorModeValue("teal.100", "teal.200")}
               />
             </Box>
