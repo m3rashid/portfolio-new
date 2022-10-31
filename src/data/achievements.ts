@@ -1,24 +1,24 @@
-import {
-  FaBlog,
-  FaChalkboardTeacher,
-  FaHackerrank,
-  FaPython,
-  FaSchool,
-} from "react-icons/fa";
+import { FaBlog, FaHackerrank, FaPython } from "react-icons/fa";
 import { MdSocialDistance, MdWork } from "react-icons/md";
 import { GiRank3, GiSpiderWeb } from "react-icons/gi";
 import { BsCodeSlash } from "react-icons/bs";
-import { SiGooglecloud } from "react-icons/si";
+import { SiGooglecloud, SiJavascript } from "react-icons/si";
 import { AiFillGoogleCircle } from "react-icons/ai";
 
 export const in2022 = [
+  { icon: BsCodeSlash, text: "Became GDSC Cloud Lead at JMI" },
+  {
+    icon: SiJavascript,
+    text: "Started making an opensource NPM package (dsa-js)",
+  },
+  {
+    icon: BsCodeSlash,
+    text: "Started Open Source Organization in my college",
+  },
+  { icon: MdWork, text: "Started building Spark India (B2B marketplace)" },
   {
     icon: MdSocialDistance,
     text: "Completed the JMI Connect (Social Media App, Team Project)",
-  },
-  {
-    icon: FaChalkboardTeacher,
-    text: "Taught students about Web Development and related stuff",
   },
   { icon: MdWork, text: "Joined m16Labs as Softwre Engineering Intern" },
   {
@@ -40,13 +40,15 @@ export const in2021 = [
     icon: GiSpiderWeb,
     text: "Joined IEEE-CS JMI as Web Development team lead",
   },
-  { icon: GiSpiderWeb, text: "Promoted to Web Development Team Lead at TJR" },
-  { icon: GiSpiderWeb, text: "Joined The Jamia Review (College society)" },
+  {
+    icon: GiSpiderWeb,
+    text: "Joined The Jamia Review as Web Development Team Lead",
+  },
   {
     icon: BsCodeSlash,
     text: "Participated as a team lead for E-Yantra Fighting Covid-19 Hackathon",
   },
-  { icon: BsCodeSlash, text: "Wrote my first article on linkedIn and DEV" },
+  { icon: BsCodeSlash, text: "Wrote my first article on linkedIn and DEV.to" },
   { icon: BsCodeSlash, text: "Made my first youtube tutorial video" },
   {
     icon: FaHackerrank,
@@ -59,9 +61,4 @@ export const in2021 = [
   },
 ];
 
-export const in2020 = [
-  {
-    icon: FaSchool,
-    text: "Enrolled to JMI for B.Tech, CSE",
-  },
-];
+export const in2020 = [];
