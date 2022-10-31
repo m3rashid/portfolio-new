@@ -9,19 +9,16 @@ import {
 import useSound from "use-sound";
 import { FaMoon, FaSun } from "react-icons/fa";
 
-type ColorModeSwitcherProps = Omit<IconButtonProps, "aria-label">;
-
-export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = (props) => {
+export const ColorModeSwitcher: React.FC<
+  Omit<IconButtonProps, "aria-label">
+> = (props) => {
   const { toggleColorMode } = useColorMode();
   const text = useColorModeValue("dark", "light");
   const SwitchIcon = useColorModeValue(FaMoon, FaSun);
 
   const [play] = useSound("/audios/lightswitch.mp3", {
     volume: 0.05,
-    sprite: {
-      on: [0, 300],
-      off: [500, 300],
-    },
+    sprite: { on: [0, 300], off: [500, 300] },
   });
 
   const handleClick = () => {
@@ -43,9 +40,7 @@ export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = (props) => {
         onClick={handleClick}
         icon={<SwitchIcon />}
         aria-label={`Switch to ${text} mode`}
-        _hover={{
-          bg: useColorModeValue("gray.200", "gray.900"),
-        }}
+        _hover={{ bg: useColorModeValue("gray.200", "gray.900") }}
         {...props}
       />
     </Tooltip>
