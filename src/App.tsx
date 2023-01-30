@@ -1,23 +1,23 @@
-import React from "react";
-import { ChakraProvider, Center, Spinner, Box } from "@chakra-ui/react";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import React from 'react';
+import { ChakraProvider, Center, Spinner, Box } from '@chakra-ui/react';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
-import { theme } from "style/theme";
-import TopNav from "components/globals/top-nav";
-import Footer from "components/globals/footer";
+import { theme } from 'style/theme';
+import TopNav from 'components/globals/top-nav';
+import Footer from 'components/globals/footer';
 
-const Home = React.lazy(() => import("pages/home"));
-const About = React.lazy(() => import("pages/about"));
-const TechStack = React.lazy(() => import("pages/tech-stack"));
-const Achievements = React.lazy(() => import("pages/achievements"));
-const MyStory = React.lazy(() => import("pages/my-story"));
+const Home = React.lazy(() => import('pages/home'));
+const About = React.lazy(() => import('pages/about'));
+const TechStack = React.lazy(() => import('pages/tech-stack'));
+const Achievements = React.lazy(() => import('pages/achievements'));
+const MyStory = React.lazy(() => import('pages/my-story'));
 
 const routes = [
-  { path: "/", name: "Home", component: Home },
-  { path: "/about", name: "About", component: About },
-  { path: "/achievements", name: "Achievements", component: Achievements },
-  { path: "/tech-stack", name: "Tools", component: TechStack },
-  { path: "/story-timeline", name: "My Story", component: MyStory },
+  { path: '/', name: 'Home', component: Home },
+  { path: '/about', name: 'About', component: About },
+  { path: '/achievements', name: 'Achievements', component: Achievements },
+  { path: '/tech-stack', name: 'Tools', component: TechStack },
+  { path: '/story-timeline', name: 'My Story', component: MyStory },
 ];
 
 export const App = () => (
@@ -25,14 +25,18 @@ export const App = () => (
     <BrowserRouter>
       <TopNav />
       <Box
-        textAlign="center"
-        fontSize="xl"
-        w={["90%", "85%", "80%"]}
+        textAlign='center'
+        fontSize='xl'
+        w={['90%', '85%', '80%']}
         maxW={800}
-        mx="auto"
-        style={{ overflowX: "hidden" }}
+        mx='auto'
+        style={{ overflowX: 'hidden', overflowY: 'hidden' }}
       >
-        <Box pt={10} pb={10} style={{ overflowX: "hidden" }}>
+        <Box
+          pt={10}
+          pb={10}
+          style={{ overflowX: 'hidden', overflowY: 'hidden' }}
+        >
           <React.Suspense
             fallback={
               <Center>
@@ -48,7 +52,7 @@ export const App = () => (
                   element={<route.component />}
                 />
               ))}
-              <Route path="*" element={<Navigate to="/" />} />
+              <Route path='*' element={<Navigate to='/' />} />
             </Routes>
           </React.Suspense>
         </Box>

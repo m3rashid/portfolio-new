@@ -1,20 +1,22 @@
-import { ColorModeScript } from "@chakra-ui/react";
-import React from "react";
-import { render, hydrate } from "react-dom";
-import { App } from "./App";
+import React from 'react';
+// import { createRoot } from 'react-dom/client';
+import { ColorModeScript } from '@chakra-ui/react';
 
-const rootElement = document.getElementById("root") as HTMLElement;
+import { App } from './App';
+import { hydrate, render } from 'react-dom';
+
+const rootElement = document.getElementById('root') as HTMLElement;
 // const root = createRoot(rootElement);
 
-const InnerApp = (
+const InnerApp = () => (
   <React.StrictMode>
-    <ColorModeScript initialColorMode="dark" />
+    <ColorModeScript initialColorMode='dark' />
     <App />
   </React.StrictMode>
-)
+);
 
 if (rootElement.hasChildNodes()) {
-	hydrate(InnerApp, rootElement);
+  hydrate(<InnerApp />, rootElement);
 } else {
-	render(InnerApp, rootElement);
+  render(<InnerApp />, rootElement);
 }
