@@ -6,18 +6,32 @@ import { theme } from 'style/theme';
 import TopNav from 'components/globals/top-nav';
 import Footer from 'components/globals/footer';
 
-const Home = React.lazy(() => import('pages/home'));
-const About = React.lazy(() => import('pages/about'));
-const TechStack = React.lazy(() => import('pages/tech-stack'));
-const Achievements = React.lazy(() => import('pages/achievements'));
-const MyStory = React.lazy(() => import('pages/my-story'));
-
 const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/about', name: 'About', component: About },
-  { path: '/achievements', name: 'Achievements', component: Achievements },
-  { path: '/tech-stack', name: 'Tools', component: TechStack },
-  { path: '/story-timeline', name: 'My Story', component: MyStory },
+  {
+    path: '/',
+    name: 'Home',
+    component: React.lazy(() => import('pages/home')),
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: React.lazy(() => import('pages/about')),
+  },
+  {
+    path: '/achievements',
+    name: 'Achievements',
+    component: React.lazy(() => import('pages/achievements')),
+  },
+  {
+    path: '/tech-stack',
+    name: 'Tools',
+    component: React.lazy(() => import('pages/tech-stack')),
+  },
+  {
+    path: '/story-timeline',
+    name: 'My Story',
+    component: React.lazy(() => import('pages/my-story')),
+  },
 ];
 
 export const App = () => (

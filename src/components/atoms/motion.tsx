@@ -1,6 +1,6 @@
-import React from "react";
-import { motion, isValidMotionProp } from "framer-motion";
-import { Box, Flex, Image, forwardRef } from "@chakra-ui/react";
+import React from 'react';
+import { motion, isValidMotionProp } from 'framer-motion';
+import { Box, Flex, Image, forwardRef } from '@chakra-ui/react';
 
 export const MotionBox = motion(
   forwardRef((props, ref) => {
@@ -25,7 +25,11 @@ export const MotionImage = motion(
       Object.entries(props).filter(([key]) => !isValidMotionProp(key))
     );
     return (
-      <Image ref={ref} fallbackSrc="/images/placeholder.png" {...chakraProps} />
+      <Image
+        ref={ref}
+        fallbackSrc='/images/placeholder.webp'
+        {...chakraProps}
+      />
     );
   })
 );
