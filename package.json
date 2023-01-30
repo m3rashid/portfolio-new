@@ -6,8 +6,7 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build": "react-scripts build",
-    "postbuild": "react-snap"
+    "build": "./build.sh"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",

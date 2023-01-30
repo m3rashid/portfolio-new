@@ -14,7 +14,6 @@ import { Link as NavLink } from 'react-router-dom';
 import { MotionBox, MotionFlex } from 'components/atoms/motion';
 import Header from 'components/globals/header';
 import Projects from 'components/projects';
-import { projectsList } from 'data/projects-list';
 import 'style/style.css';
 import { Helmet } from 'react-helmet';
 
@@ -132,7 +131,7 @@ const Home = () => {
                 </ListItem>
               </UnorderedList>
             </Stack>
-            <Projects projects={projectsList} />
+            <Projects />
           </Box>
         </MotionBox>
       </Flex>

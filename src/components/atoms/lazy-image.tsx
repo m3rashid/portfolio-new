@@ -21,7 +21,7 @@ const LazyImage = (props: LazyImageProps) => {
       src={src}
       placeholder='/images/placeholder.webp'
     >
-      {(src) => {
+      {(src: string) => {
         return (
           <Image
             src={src}

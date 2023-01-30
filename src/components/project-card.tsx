@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   HStack,
   VStack,
@@ -6,11 +6,11 @@ import {
   useColorModeValue,
   Tag,
   Link,
-} from "@chakra-ui/react";
-import { motion, AnimatePresence } from "framer-motion";
+} from '@chakra-ui/react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-import { getTagColor } from "style/theme";
-import LazyImage from "components/atoms/lazy-image";
+import { getTagColor } from 'style/theme';
+import LazyImage from 'components/atoms/lazy-image';
 
 interface ProjectCardProps {
   title: string;
@@ -27,7 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   link,
   technologies,
 }) => {
-  const textColor = useColorModeValue("gray.500", "gray.200");
+  const textColor = useColorModeValue('gray.500', 'gray.200');
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
 
@@ -35,35 +35,35 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <motion.div layout onClick={toggleOpen}>
       <HStack
         p={4}
-        bg={useColorModeValue("white", "gray.800")}
-        rounded="xl"
-        borderWidth="1px"
-        borderColor={useColorModeValue("gray.100", "gray.700")}
-        w="100%"
-        h="100%"
-        textAlign="left"
-        align="start"
+        bg={useColorModeValue('white', 'gray.800')}
+        rounded='xl'
+        borderWidth='1px'
+        borderColor={useColorModeValue('gray.100', 'gray.700')}
+        w='100%'
+        h='100%'
+        textAlign='left'
+        align='start'
         spacing={4}
-        cursor="pointer"
-        _hover={{ shadow: "lg" }}
+        cursor='pointer'
+        _hover={{ shadow: 'lg' }}
       >
         <LazyImage
           src={logo}
-          size="sm"
+          size='sm'
           width={33}
           height={33}
-          layout="fixed"
-          rounded="md"
+          layout='fixed'
+          rounded='md'
         />
-        <VStack align="start" justify="flex-start">
-          <VStack spacing={0} align="start">
+        <VStack align='start' justify='flex-start'>
+          <VStack spacing={0} align='start'>
             <motion.div layout>
               <HStack>
                 <Text
                   as={Link}
                   {...(link && { href: link })}
-                  fontWeight="bold"
-                  fontSize="md"
+                  fontWeight='bold'
+                  fontSize='md'
                   noOfLines={1}
                   onClick={(e) => e.stopPropagation()}
                   isExternal
@@ -80,7 +80,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 exit={{ opacity: 1 }}
               >
                 {!isOpen && (
-                  <Text fontSize="sm" color={textColor} noOfLines={{ base: 2 }}>
+                  <Text fontSize='sm' color={textColor} noOfLines={{ base: 2 }}>
                     {description}
                   </Text>
                 )}
@@ -96,15 +96,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 variants={{ exit: { transition: { staggerChildren: 0.1 } } }}
               >
                 {isOpen && (
-                  <Text fontSize="sm" color={textColor}>
+                  <Text fontSize='sm' color={textColor}>
                     {description}
                   </Text>
                 )}
               </motion.div>
             </AnimatePresence>
-            <HStack spacing="1">
+            <HStack spacing='1'>
               {technologies.map((tech, index) => (
-                <Tag key={index} size="sm" colorScheme={getTagColor(tech)}>
+                <Tag key={index} size='sm' colorScheme={getTagColor(tech)}>
                   {tech}
                 </Tag>
               ))}
