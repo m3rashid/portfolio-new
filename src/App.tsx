@@ -18,9 +18,14 @@ const routes = [
     component: React.lazy(() => import('pages/about')),
   },
   {
-    path: '/achievements',
-    name: 'Achievements',
-    component: React.lazy(() => import('pages/achievements')),
+    path: '/blogs',
+    name: 'Blogs',
+    component: React.lazy(() => import('pages/blogs')),
+  },
+  {
+    path: '/blog/:slug',
+    name: 'Blog',
+    component: React.lazy(() => import('pages/singleBlog')),
   },
   {
     path: '/tech-stack',

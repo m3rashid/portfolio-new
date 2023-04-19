@@ -20,24 +20,51 @@ import React from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { MdTimeline } from 'react-icons/md';
 import { BiChevronDown } from 'react-icons/bi';
-import { BsCheckCircle } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { NavLink as RouterNavLink } from 'react-router-dom';
 import { AiOutlineClose, AiTwotoneThunderbolt } from 'react-icons/ai';
+import { HiCode } from 'react-icons/hi';
 
 import { ColorModeSwitcher } from 'components/globals/ColorModeSwitcher';
+import { ImBlog } from 'react-icons/im';
 
-const webLinks = [
-  { name: 'About', path: '/about', external: false },
-  { name: 'Blogs', path: 'https://blogs.m3rashid.in', external: true },
+const webLinks = [{ name: 'About', path: '/about' }];
+
+const webDropDown = [
+  {
+    name: 'Tech Stack',
+    path: '/tech-stack',
+    Icon: AiTwotoneThunderbolt,
+  },
+  {
+    name: 'My Story',
+    path: '/story-timeline',
+    Icon: MdTimeline,
+  },
+  {
+    name: 'Blogs',
+    path: '/blogs',
+    external: false,
+    Icon: ImBlog,
+  },
+  {
+    name: 'Technical Blogs',
+    path: 'https://blogs.m3rashid.in',
+    external: true,
+    Icon: HiCode,
+  },
 ];
 
 const mobileLinks = [
   { name: 'About', path: '/about', external: false },
+  { name: 'Blogs', path: '/blogs', external: false },
   { name: 'Tech Stack', path: '/tech-stack', external: false },
-  { name: 'Achievement', path: '/achievements', external: false },
-  { name: 'Developer Story', path: '/story-timeline', external: false },
-  { name: 'Blogs', path: 'https://blogs.m3rashid.in', external: true },
+  { name: 'My Story', path: '/story-timeline', external: false },
+  {
+    name: 'Technical Blogs',
+    path: 'https://blogs.m3rashid.in',
+    external: true,
+  },
 ];
 
 interface NavLinkProps {
@@ -47,7 +74,7 @@ interface NavLinkProps {
   onClose: () => void;
 }
 
-const NavLink = (props: NavLinkProps) => {
+export const NavLink = (props: NavLinkProps) => {
   return (
     <Link
       as={RouterNavLink}
@@ -106,33 +133,14 @@ export default function TopNav() {
               />
             </Box>
             <HStack as='nav' spacing={4} display={{ base: 'none', md: 'flex' }}>
-              {webLinks.map((link, index) => {
-                if (link.external) {
-                  return (
-                    <Box
-                      key={index}
-                      px={2}
-                      py={1}
-                      rounded='md'
-                      _hover={{ textDecoration: 'none', bg: menuProps.bg }}
-                      _activeLink={{ color: menuProps.color }}
-                    >
-                      <Link as={Link} target='_blank' href={link.path}>
-                        {link.name}
-                      </Link>
-                    </Box>
-                  );
-                } else {
-                  return (
-                    <NavLink
-                      key={index}
-                      name={link.name}
-                      path={link.path}
-                      onClose={onClose}
-                    />
-                  );
-                }
-              })}
+              {webLinks.map((link, index) => (
+                <NavLink
+                  key={index}
+                  name={link.name}
+                  path={link.path}
+                  onClose={onClose}
+                />
+              ))}
               <Menu isLazy>
                 <MenuButton
                   as={Button}
@@ -151,42 +159,23 @@ export default function TopNav() {
                   Links
                 </MenuButton>
                 <MenuList zIndex={5}>
-                  <Link as={RouterNavLink} to='/tech-stack'>
-                    <MenuItem>
-                      <HStack>
-                        <Icon
-                          as={AiTwotoneThunderbolt}
-                          size={18}
-                          color={useColorModeValue('blue.500', 'blue.200')}
-                        />
-                        <Text>Tech Stack</Text>
-                      </HStack>
-                    </MenuItem>
-                  </Link>
-                  <Link as={RouterNavLink} to='/achievements'>
-                    <MenuItem>
-                      <HStack>
-                        <Icon
-                          as={BsCheckCircle}
-                          size={18}
-                          color={useColorModeValue('blue.500', 'blue.200')}
-                        />
-                        <Text>Achievements</Text>
-                      </HStack>
-                    </MenuItem>
-                  </Link>
-                  <Link as={RouterNavLink} to='/story-timeline'>
-                    <MenuItem>
-                      <HStack>
-                        <Icon
-                          as={MdTimeline}
-                          size={18}
-                          color={useColorModeValue('blue.500', 'blue.200')}
-                        />
-                        <Text>My Story</Text>
-                      </HStack>
-                    </MenuItem>
-                  </Link>
+                  {webDropDown.map((link, index) => (
+                    <Link
+                      as={RouterNavLink}
+                      to={link.path}
+                      key={link.path}
+                      {...{
+                        target: link.external ? '_blank' : '_self',
+                      }}
+                    >
+                      <MenuItem>
+                        <HStack>
+                          <Icon as={link.Icon} size={18} color='blue.200' />
+                          <Text>{link.name}</Text>
+                        </HStack>
+                      </MenuItem>
+                    </Link>
+                  ))}
                 </MenuList>
               </Menu>
             </HStack>
@@ -196,6 +185,7 @@ export default function TopNav() {
               as={Link}
               href='https://github.com/m3rashid'
               size='md'
+              target='_blank'
               icon={<FaGithub />}
               aria-label='Github account'
               bg={useColorModeValue('white', 'gray.700')}
@@ -215,14 +205,13 @@ export default function TopNav() {
             maxW={800}
             display={['inherit', 'inherit', 'none']}
           >
-            <Stack as='nav' spacing={4}>
+            <Stack as='nav' spacing={3}>
               {mobileLinks.map((link, index) => {
                 if (link.external) {
                   return (
                     <Box
                       key={index}
                       px={2}
-                      py={1}
                       rounded='md'
                       _hover={{ textDecoration: 'none', bg: menuProps.bg }}
                       _activeLink={{ color: menuProps.color }}

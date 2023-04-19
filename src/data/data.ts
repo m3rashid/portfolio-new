@@ -1,10 +1,18 @@
 export const companies = [
   {
-    title: 'Trakkia',
+    title: 'Exatorial',
+    alt: 'Exatorial',
+    role: 'Co-Founder, Software Engineer',
+    skills: ['reactjs', 'nodejs', 'mongodb', 'AWS', 'nextjs', 'react-native'],
+    period: 'August 2022 - Present',
+    logo: '/images/work/exatorial.webp',
+  },
+  {
+    title: 'Trakkia Technologies',
     alt: 'Trakkia',
     role: 'Software Developer Intern',
     skills: ['reactjs', 'AWS'],
-    period: 'Nov 2021 - Jan 2021',
+    period: 'Nov 2022 - Jan 2023',
     logo: '/images/work/trakkia.webp',
   },
   {
@@ -12,7 +20,7 @@ export const companies = [
     alt: 'Yantraksh Logistics',
     role: 'Software Developer Intern',
     skills: ['reactjs', 'AWS'],
-    period: 'Sept 2021 - Jan 2021',
+    period: 'Sept 2022 - Jan 2023',
     logo: '/images/work/yantraksh.webp',
   },
   {
@@ -20,7 +28,7 @@ export const companies = [
     alt: 'm16 labs',
     role: 'Softare Engineering Intern',
     skills: ['mongodb', 'expressjs', 'reactjs', 'nodejs'],
-    period: '31 Jan 2022 - May 2022',
+    period: 'Jan 2022 - May 2022',
     logo: '/images/work/m16.webp',
   },
   {
@@ -28,7 +36,7 @@ export const companies = [
     alt: 'Vinnovate Technologies',
     role: 'Product Engineering Intern',
     skills: ['mongodb', 'expressjs', 'reactjs', 'nodejs'],
-    period: 'Dec 2021 - Jan 2021',
+    period: 'Dec 2021 - Jan 2022',
     logo: '/images/work/vinnovate.webp',
   },
   {

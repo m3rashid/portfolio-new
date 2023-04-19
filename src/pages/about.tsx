@@ -84,7 +84,7 @@ const Card = (props: CardProps) => {
                 display={['none', 'none', 'flex', 'flex']}
               >
                 {skills.map((skill) => (
-                  <Tag size='sm' padding='0 3px' key={skill}>
+                  <Tag size='sm' padding='2px 6px' key={skill}>
                     {skill}
                   </Tag>
                 ))}

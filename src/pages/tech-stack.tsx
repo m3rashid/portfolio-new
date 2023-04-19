@@ -11,10 +11,18 @@ import {
   TabPanel,
   useColorModeValue,
   SimpleGrid,
+  Heading,
+  Flex,
+  Stack,
+  Box,
 } from '@chakra-ui/react';
 import { BiDesktop } from 'react-icons/bi';
 import { GiDatabase } from 'react-icons/gi';
-import { AiTwotoneThunderbolt, AiFillTool } from 'react-icons/ai';
+import {
+  AiTwotoneThunderbolt,
+  AiFillTool,
+  AiTwotoneTool,
+} from 'react-icons/ai';
 
 import { skills } from 'data/data';
 import Header from 'components/globals/header';
@@ -32,6 +40,8 @@ const filterCriteria = [
   { value: 'database', label: 'Database', iconAs: GiDatabase },
   { value: 'tools', label: 'Tools', iconAs: AiFillTool },
 ];
+
+const TURQUOISE = '#06b6d4';
 
 const TechStack = () => {
   const [skillsList, setSkillsList] = useState([]);
@@ -57,10 +67,16 @@ const TechStack = () => {
         <VStack spacing={8}>
           <Section>
             <VStack>
-              {/* @ts-ignore */}
-              <Header mt={0} mb={1}>
-                Tech Stack
-              </Header>
+              <Heading>
+                <Flex alignItems='center'>
+                  <Header underlineColor={TURQUOISE} mt={0} mb={2}>
+                    Tech Stack
+                  </Header>
+                  <Stack pl={3}>
+                    <Box as={AiTwotoneTool} size='25px' />
+                  </Stack>
+                </Flex>
+              </Heading>
               <Text
                 fontSize='xl'
                 color={useColorModeValue('gray.500', 'gray.200')}

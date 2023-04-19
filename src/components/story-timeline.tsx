@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Box,
   BoxProps,
@@ -11,8 +11,8 @@ import {
   PopoverContent,
   PopoverBody,
   useMediaQuery,
-} from "@chakra-ui/react";
-import { FiCheckCircle } from "react-icons/fi";
+} from '@chakra-ui/react';
+import { FiCheckCircle } from 'react-icons/fi';
 
 export interface StoryTimelineProps extends BoxProps {
   icon?: any;
@@ -34,63 +34,63 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({
   const [isOpen, setIsOpen] = React.useState(true);
   const open = () => setIsOpen(!isOpen);
   const close = () => setIsOpen(false);
-  const color = useColorModeValue("gray.700", "gray.200");
-  const [isSmallerThan800] = useMediaQuery("(max-width: 800px)");
-  let place = isSmallerThan800 ? "right" : index % 2 === 0 ? "right" : "left";
+  const color = useColorModeValue('gray.700', 'gray.200');
+  const [isSmallerThan800] = useMediaQuery('(max-width: 800px)');
+  let place = isSmallerThan800 ? 'right' : index % 2 === 0 ? 'right' : 'left';
 
   return (
     <Flex minH={20} {...props}>
-      <Flex flexDir="column" alignItems="center" minHeight="8rem" mr={4}>
+      <Flex flexDir='column' alignItems='center' minHeight='8rem' mr={4}>
         <Popover
           returnFocusOnClose={false}
           isOpen={isOpen}
           onClose={close}
           placement={place as any}
           closeOnBlur={false}
-          variant="responsive"
+          variant='responsive'
         >
           {/* @ts-ignore */}
           <PopoverTrigger>
-            <Box onClick={open} position="relative">
+            <Box onClick={open} position='relative'>
               <Circle
                 size={12}
-                bg={useColorModeValue("gray.600", "gray.500")}
+                bg={useColorModeValue('gray.600', 'gray.500')}
                 opacity={useColorModeValue(0.07, 0.15)}
                 sx={{}}
               />
               {year ? (
                 <Box
                   fontSize={15}
-                  fontWeight="bold"
+                  fontWeight='bold'
                   color={color}
-                  pos="absolute"
-                  left="0.5rem"
-                  top="0.875rem"
+                  pos='absolute'
+                  left='0.5rem'
+                  top='0.875rem'
                 >
                   {year}
                 </Box>
               ) : (
                 <Box
                   as={icon}
-                  size="1.25rem"
+                  size='1.25rem'
                   color={color}
-                  pos="absolute"
-                  left="0.875rem"
-                  top="0.875rem"
+                  pos='absolute'
+                  left='0.875rem'
+                  top='0.875rem'
                 />
               )}
             </Box>
           </PopoverTrigger>
           <Box fontSize={15}>
             {!year && (
-              <PopoverContent padding={["0.2rem", "0.2rem", "0.7rem"]}>
+              <PopoverContent padding={['0.2rem', '0.2rem', '0.7rem']}>
                 <PopoverArrow />
                 <PopoverBody>{children}</PopoverBody>
               </PopoverContent>
             )}
           </Box>
         </Popover>
-        {!skipTrail && <Box w="1px" flex={1} bg={color} />}
+        {!skipTrail && <Box w='1px' flex={1} bg={color} />}
       </Flex>
     </Flex>
   );
